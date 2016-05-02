@@ -23,6 +23,7 @@ package 'mysql-server'
 package 'mysql-client'
 
 bash 'phpunit' do
+  cwd '/home/vagrant'
   code <<-EOH
   wget https://phar.phpunit.de/phpunit.phar
   chmod +x phpunit.phar
