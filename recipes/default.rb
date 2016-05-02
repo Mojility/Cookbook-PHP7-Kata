@@ -4,10 +4,22 @@
 #
 # Copyright (c) 2016 Mojility Inc, All Rights Reserved.
 
-package 'php5-fpm'
-package 'php5-mysql'
-package 'phpunit'
+
+apt_repository 'php7' do
+    uri          'ppa:ondrej/php'
+    distribution node['lsb']['codename']
+end
+
+apt_repository 'nginx-php' do
+    uri          'ppa:nginx/stable'
+    distribution node['lsb']['codename']
+end
+
+package 'php7.0'
+package 'php7.0-mysql'
+package 'php7.0-fpm'
 package 'nginx'
+package 'phpunit'
 package 'mysql-server'
 package 'mysql-client'
 

@@ -1,0 +1,9 @@
+DEPENDENCIES
+  CookbookPHPKata
+    path: .
+    metadata: true
+  apt (~> 3.0.0)
+
+GRAPH
+  CookbookPHPKata (0.9.0)
+  apt (3.0.0)
