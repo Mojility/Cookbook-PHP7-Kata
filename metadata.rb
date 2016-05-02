@@ -1,4 +1,4 @@
-name 'CookbookPHPKata'
+name 'CookbookPHP7Kata'
 maintainer 'Stacey Vetzal'
 maintainer_email 'stacey@mojility.ca'
 license 'MIT'

@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: CookbookPHPKata
+# Cookbook Name:: CookbookPHP7Kata
 # Recipe:: default
 #
 # Copyright (c) 2016 Mojility Inc, All Rights Reserved.
@@ -19,9 +19,14 @@ package 'php7.0'
 package 'php7.0-mysql'
 package 'php7.0-fpm'
 package 'nginx'
-package 'phpunit'
 package 'mysql-server'
 package 'mysql-client'
+
+bash 'phpunit' do
+  code <<-EOH
+
+  EOH
+end
 
 template '/etc/nginx/sites-available/default' do
     source 'nginx-default.erb'
