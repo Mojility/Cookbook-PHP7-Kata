@@ -6,18 +6,18 @@
 
 
 apt_repository 'php7' do
-    uri          'ppa:ondrej/php'
-    distribution node['lsb']['codename']
+  uri 'ppa:ondrej/php'
+  distribution node['lsb']['codename']
 end
 
 apt_repository 'nginx-php' do
-    uri          'ppa:nginx/stable'
-    distribution node['lsb']['codename']
+  uri 'ppa:nginx/stable'
+  distribution node['lsb']['codename']
 end
 
-package 'php7.0'
-package 'php7.0-mysql'
-package 'php7.0-fpm'
+package 'php7.2'
+package 'php7.2-mysql'
+package 'php7.2-fpm'
 package 'nginx'
 package 'mysql-server'
 package 'mysql-client'
@@ -32,12 +32,17 @@ bash 'phpunit' do
 end
 
 template '/etc/nginx/sites-available/default' do
-    source 'nginx-default.erb'
-    owner 'root'
-    group 'root'
-    mode '0644'
+  source 'nginx-default.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+end
+
+service 'apache2' do
+  action :disable
 end
 
 service 'nginx' do
-    action :restart
+  action :enable
+  action :restart
 end
