@@ -39,6 +39,7 @@ template '/etc/nginx/sites-available/default' do
 end
 
 service 'apache2' do
+  action :stop
   action :disable
 end
 
