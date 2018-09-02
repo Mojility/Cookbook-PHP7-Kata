@@ -18,6 +18,7 @@ end
 package 'php7.2'
 package 'php7.2-mysql'
 package 'php7.2-fpm'
+package 'php7.2-curl'
 package 'nginx'
 package 'mysql-server'
 package 'mysql-client'
